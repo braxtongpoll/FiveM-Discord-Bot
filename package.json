@@ -1,0 +1,30 @@
+{
+  "name": "customordering",
+  "version": "1.0.0",
+  "description": "A ordering system for small marketplaces made by Xen Development, featuring a web dashboard ",
+  "main": "config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Xen Development",
+  "license": "ISC",
+  "dependencies": {
+    "@discordjs/opus": "^0.5.0",
+    "canvas": "^2.6.1",
+    "carden": "^4.0.0",
+    "chalk": "^4.1.0",
+    "discord.js": "^12.5.1",
+    "figlet": "^1.5.0",
+    "formidable": "^1.2.2",
+    "gamedig": "^3.0.0",
+    "lyrics-finder": "^21.7.0",
+    "moment": "^2.29.1",
+    "mongoose": "^5.11.17",
+    "opusscript": "0.0.8",
+    "request": "^2.88.2",
+    "simple-youtube-api": "^5.2.1",
+    "string-table": "^0.1.5",
+    "winston": "^3.3.3",
+    "ytdl-core-discord": "^1.2.5"
+  }
+}
