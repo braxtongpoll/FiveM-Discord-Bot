@@ -11,7 +11,6 @@ class XenClient extends Client {
         this.queue = new Map();
         this.logger = require(`./utils/logger`);
         this.utils = require(`./utils/utils`);
-        this.player = new Youtube(`AIzaSyAMHE0lLkjhxWpX4kgmHquDoKBiIgHcTzE`);
         this.db = require(`./schemas/data`);
         this.table = require(`string-table`);
         // Prep command collection
