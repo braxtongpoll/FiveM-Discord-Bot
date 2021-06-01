@@ -22,7 +22,7 @@ module.exports = {
         });
         figlet.text(`Xen    Development`, { width: '500', }, async function(err, art) {
             if (err) return;
-            var box = carden(art, chalk.black(`Logged in as ${client.user.tag} (${chalk.green(client.user.id)})\n\nCommands: ${chalk.black(global.commands)}\nAliases: ${chalk.black(global.aliases)}\nEvents: ${chalk.black(totalEvents)}\nCreated By: ${chalk.black("Xen Development")}\nFor support ${chalk.black("https://discord.xendev.us")}\n\nOperating System: ${operating}\nProcess PID: ${process.pid}\nDiscord.js Version: ${djsVer}\nNode Version: ${process.version.replace("v","")}\nDatabase: ${chalk.green(db_name)}`), { borderColor: "blue", borderStyle: "bold", padding: 1, backgroundColor: "blue", header: { backgroundColor: "black" }, content: { backgroundColor: "blue" } });
+            var box = carden(art, chalk.black(`Logged in as ${client.user.tag} (${chalk.green(client.user.id)})\n\nCommands: ${chalk.black(global.commands)}\nAliases: ${chalk.black(global.aliases)}\nEvents: ${chalk.black(totalEvents)}\nCreated By: ${chalk.black("Pluto's World")}\nFor support ${chalk.black("https://discord.gg/EMg4yTpGqH")}\n\nOperating System: ${operating}\nProcess PID: ${process.pid}\nDiscord.js Version: ${djsVer}\nNode Version: ${process.version.replace("v","")}\nDatabase: ${chalk.green(db_name)}`), { borderColor: "blue", borderStyle: "bold", padding: 1, backgroundColor: "blue", header: { backgroundColor: "black" }, content: { backgroundColor: "blue" } });
             return console.log(box);
         });
     }
