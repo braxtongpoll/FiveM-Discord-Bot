@@ -3,7 +3,6 @@ const { readdirSync } = require('fs');
 const { join } = require('path');
 const Discord = require(`discord.js`);
 const Youtube = require(`simple-youtube-api`);
-let dmMap = {};
 class XenClient extends Client {
     constructor(options = {}) {
         super(options);
@@ -17,12 +16,6 @@ class XenClient extends Client {
         this.commands = new Collection();
         this.aliases = new Collection();
 
-        this.DMDATA = async(params) => {
-            dmMap[params.id] = params.parse;
-        };
-        this.DMDATAPULL = async(id) => {
-            return dmMap[id];
-        }
         this.sendTemp = async(message, text, time = 10000, extraFlag = undefined) => {
             if (extraFlag == "useEmbed") return message.channel.send(text).then(del => del.delete({ timeout: time }))
             return message.channel.send(text).then(del => del.delete({ timeout: time }))
