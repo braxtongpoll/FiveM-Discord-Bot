@@ -65,7 +65,6 @@ class XenClient extends Client {
                             });
                         });
                     }).catch(e => {
-                        client.DMDATA({ id: message.author.id, parse: undefined });
                         channel.send(`Your application has timed out.`).then(() => { channel.delete({ timeout: 30000 }).catch(e => {}) });
                     });
                 });
@@ -127,7 +126,6 @@ class XenClient extends Client {
                             });
                         });
                     }).catch(e => {
-                        client.DMDATA({ id: message.author.id, parse: undefined });
                         channel.send(`Your application has timed out.`).then(() => { channel.delete({ timeout: 30000 }).catch(e => {}) });
                     });
                 });
@@ -158,7 +156,6 @@ class XenClient extends Client {
             }
         };
         this.applicationSubmit = async(client, message, application, channel, logs, answers, res) => {
-            client.DMDATA({ id: message.author.id, parse: undefined });
             var appname = message.content.split(` `).slice(1).join(` `).toUpperCase()
             var embed = new MessageEmbed()
                 .setFooter(message.guild.name, message.guild.iconURL())

@@ -9,11 +9,8 @@ exports.run = async(client, message, args) => {
         if (application.active == false) return message.reply(`This application is closed.`);
         const logs = await client.channels.cache.find(c => c.id === application.logs);
         if (!logs) return message.reply(`This application is missing an application channel. Contact your servers administration if you believe this is a mistake.`);
-        let DMCHECK = await client.DMDATAPULL(message.author.id);
-        if (DMCHECK == "support") return message.reply(`Your DM's are currently busy with anonymous support.`);
         message.author.send(`${message.author} This is your application channel! React with ✅ to begin. React with ❌ to cancel.`).then(async(msg) => {
             const channel = msg.channel;
-            client.DMDATA({ id: message.author.id, parse: "applying" })
             message.reply(`Your application has been started in your DM's!`).then(a => a.delete({ timeout: 10000 }));
             message.delete();
             const reactionFilter = (__, user) => { return user.id === message.author.id; }
@@ -75,20 +72,17 @@ exports.run = async(client, message, args) => {
                                     });
                                     break;
                                 case `❌`:
-                                    client.DMDATA({ id: message.author.id, parse: undefined });
                                     await channel.send(`Application cancelled.`).then(() => {
                                         channel.delete({ timeout: 20000 }).catch(e => {});
                                     });
                                     break;
                                 default:
-                                    client.DMDATA({ id: message.author.id, parse: undefined });
                                     await channel.send(`Application cancelled.`).then(() => {
                                         channel.delete({ timeout: 20000 }).catch(e => {});
                                     });
                                     break;
                             }
                         }).catch((e) => {
-                            client.DMDATA({ id: message.author.id, parse: undefined });
                             channel.send(`A time error accured.`);
                             if (channel.guild) channel.delete({ timeout: 20000 }).catch(() => {});
                             console.log(e.stack);
