@@ -3,7 +3,7 @@ const _config = {
     token: "",
     color: `00ccff`,
 
-    //Database for help https://docs.xendev.us/#/databases?id=mongodb
+    //MongoDB Atlas Link
     database: "",
 
     // Guild Verification Checker
